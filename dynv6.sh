@@ -1,9 +1,10 @@
 #!/bin/sh -e
 hostname=$1
-device=$2
+#device=$2
 
 if [ -z "$hostname" -o -z "$token" ]; then
-  echo "Usage: token=<your-authentication-token> [netmask=64] $0 your-name.dynv6.net [device]"
+  #echo "Usage: token=<your-authentication-token> [netmask=64] $0 your-name.dynv6.net [device]"
+  "Usage: token=<your-authentication-token> $0 your-name.dynv6.net"
   exit 1
 fi
 
@@ -11,9 +12,9 @@ if [ -z "$netmask" ]; then
   netmask=128
 fi
 
-if [ -n "$device" ]; then
-  device="dev $device"
-fi
+#if [ -n "$device" ]; then
+#  device="dev $device"
+#fi
 
 if [ -e /usr/bin/curl ]; then
   bin="curl -fsS --connect-timeout 10"
